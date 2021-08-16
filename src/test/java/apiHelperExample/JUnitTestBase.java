@@ -34,7 +34,7 @@ public class JUnitTestBase {
     @SneakyThrows
     @BeforeEach
     public void initDriver()  {
-        String slenoidURL = "http://2.92.198.90:4444/wd/hub"; //111.11.11.11 -your IP address
+        String selenoidURL = "http://2.92.195.198:4444/wd/hub"; //111.11.11.11 -your IP address
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName(System.getProperty("browser_name", "chrome"));
         caps.setVersion(System.getProperty("browser_version", "86.0"));
@@ -44,7 +44,7 @@ public class JUnitTestBase {
         caps.setCapability("enableLog", true);
 
 
-        driver = new RemoteWebDriver(new URL(slenoidURL), caps);
+        driver = new RemoteWebDriver(new URL(selenoidURL), caps);
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
